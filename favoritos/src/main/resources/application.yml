@@ -1,0 +1,9 @@
+spring:
+  data:
+    elasticsearch:
+      client:
+        reactive:
+          endpoints: ${ELASTIC_ADDRESS:192.168.99.100}:${ELASTIC_PORT:9200}
+  elasticsearch:
+    rest:
+      uris: ${ELASTIC_PROTOCOL:http}://${ELASTIC_ADDRESS:192.168.99.100}:${ELASTIC_PORT:9200}
