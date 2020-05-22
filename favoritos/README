@@ -38,3 +38,12 @@ produz “application/stream+json”. A ideia é usar esse recurso quando o data
  para fazer a escrita da response parcial. 
 Note que o resultado dessa API não é um array de produtos no formato JSON, 
 ao invés disso o cliente deve estar preparado para receber objeto a objeto sem correlação.  
+
+5)
+
+https://developer.mozilla.org/en-US/docs/Web/API/EventSource
+
+An EventSource instance opens a persistent connection to an HTTP server, 
+which sends events in text/event-stream format. 
+The connection remains open until closed by calling EventSource.close().
+  

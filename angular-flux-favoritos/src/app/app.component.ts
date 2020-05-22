@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   restItems: any;
 
   //### SSE
-  // https://developer.mozilla.org/en-US/docs/Web/API/EventSource
   searchSseWithDelay(searchValue: string): void {
     this.sugestoes$ = this.sseService
       .getServerSentEvent("http://localhost:8080/sugestao/search-with-delay/" + searchValue);
