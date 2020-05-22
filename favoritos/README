@@ -1,0 +1,40 @@
+Tradeoff decision path
+1) 
+
+ https:docs.spring.iospringdocscurrentspring-framework-referenceweb-reactive.html
+
+  Servlet 3.1 did provide an API for non-blocking IO. However, using it leads
+  away from the rest of the Servlet API, where contracts are synchronous
+  (Filter, Servlet) or blocking (getParameter, getPart). This was the
+  motivation for a new common API to serve as a foundation across any
+  non-blocking runtime.
+  
+2)
+
+ https:stackoverflow.coma546875214148175
+ 
+ 1 - applicationjson = It will buffer the Flux<YourObject> in memory and
+ serialize it in one pass.
+ 
+ 2 - applicationstream+json = flush on the network each element of the Flux
+ input. This behavior is handy when the stream is infinite, or when you want
+ to push information to the client as soon as it's available
+ 
+3)
+ 
+https://thepracticaldeveloper.com/2017/11/04/full-reactive-stack-with-spring-webflux-and-angularjs/
+ 
+If we request content without using an Accept header, or setting it to application/json, 
+we'll get a synchronous, JSON-formatted response.
+If we want to use the Server-Sent Events support in Spring to implement our full reactive stack,
+ we set in our request (explicitly or behind the scenes) the Accept header to text/event-stream, 
+ therefore activating the reactive functionality in Spring.
+ 
+4)
+
+https://medium.com/nstech/programa%C3%A7%C3%A3o-reativa-com-spring-boot-webflux-e-mongodb-chega-de-sofrer-f92fb64517c3
+
+produz “application/stream+json”. A ideia é usar esse recurso quando o data stream for grande e/ou lento o suficiente
+ para fazer a escrita da response parcial. 
+Note que o resultado dessa API não é um array de produtos no formato JSON, 
+ao invés disso o cliente deve estar preparado para receber objeto a objeto sem correlação.  

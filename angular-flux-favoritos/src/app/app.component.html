@@ -1,0 +1,20 @@
+<h1>Lido de um Flux <b>com SSE</b> sem delay proposital</h1>
+
+<input type="text" (input)="searchSseWithoutDelay($event.target.value)">
+
+<h1>Lido de um Flux <b>sem SSE</b> sem delay proposital</h1>
+
+<input type="text" (input)="searchWthoutDelay($event.target.value)">
+
+<h1>Lido de um Flux <b>com SSE</b>, com delay proposital</h1>
+
+<input type="text" (input)="searchSseWithDelay($event.target.value)">
+
+<h1>Lido de um Flux <b>sem SSE</b>, com delay proposital</h1>
+
+<input type="text" (input)="searchWithDelay($event.target.value)">
+
+<div *ngFor="let n of sugestoes$ | async">
+  <div>{{n.name}}</div>
+</div>
+
